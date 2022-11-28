@@ -42,7 +42,6 @@ class ViewController: UIViewController {
     var homeData : HomeData?
     var oneCallData : OneCallModel?
 
-    var iconBaseUrl = "http://openweathermap.org/img/wn/"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,7 +95,16 @@ extension ViewController {
         
         return celsius.rounded()
     }
+}
 
+extension ViewController {
+    
+    @IBAction func actionOnNextDays(_ button : UIButton){
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "SecondViewController") as? SecondViewController{
+            vc.daily = oneCallData?.daily
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }
 
 //MARK:- UICollectionViewDelegate

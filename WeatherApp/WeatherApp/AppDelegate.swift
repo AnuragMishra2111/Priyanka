@@ -7,6 +7,9 @@
 
 import UIKit
 
+var iconBaseUrl = "http://openweathermap.org/img/wn/"
+
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
